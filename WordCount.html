@@ -1,0 +1,62 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Word Count</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <style>
+    h2{
+      font-size: 1em;
+      margin: 1px;
+      color:darkgrey;
+    }
+    button{
+    margin: 5px;
+    }
+  </style>
+    <script>
+    
+        
+    function wordcount() {
+       var words = document.getElementById('test').value;
+       var wordarr = words.split(" ");
+       
+        
+        for(var i = wordarr.length - 1; i >= 0; i--) {
+           if(wordarr[i] === "") {
+              wordarr.splice(i, 1);
+            }
+            document.getElementById('wordnum').innerHTML = (wordarr.length);
+         }
+    
+    }
+    
+    </script>
+</head>
+<body>
+  <div class="container">
+      
+      <div class="row">
+        <div class="col-sm-12 col-md-12">
+          <h1>Word Count</h1>
+        </div> <!--end col-->
+      </div><!--end row1-->
+      
+      <div class="row">
+        <div class="col-sm-3 col-md-3">
+          <button class="btn btn-success btn-block" onclick="wordcount()">Count</button>
+            <button class="btn btn-primary btn-block" type="button">Words <span id="wordnum" class="badge">0</span></button>
+        </div>
+          
+          <div class="col-sm-9 col-md-9">
+          <h2>Paste Text Here (ctl + V)</h2>
+        <textarea id="test" class="form-control form-block" row="3"></textarea>  
+        </div><!--end col-->
+      </div><!--end row2-->
+  </div>
+  <script src="http://code.jquery.com/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+</html>
